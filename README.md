@@ -6,7 +6,7 @@ Following Actions belongs to:
                           - 0: Accelerate to the Left.
                           - 1: Don't accelerate.
                           - 2: Accelerate to the Right.
-# Installation-  Clone this repository & Install Requirements.txt via pip
+# Installation-  Clone this repository
       pip install -r /path/to/requirements.txt
 
 
