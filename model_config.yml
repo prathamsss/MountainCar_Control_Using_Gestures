@@ -1,0 +1,11 @@
+batch_size: 8
+Data_dir: "/Users/prathameshsardeshmukh/Desktop/Motor_AI_Test/sample_set"
+epochs: 1
+learning_rate: 0.001
+momentum: 0.03
+no_classes: 3
+step_size: 7
+gamma: 0.002
+model_nm: 'mobilenet_v2'
+save_model_path: "/Users/prathameshsardeshmukh/Desktop/Motor_AI_Test/sample_set/sample_model.pth"
+
