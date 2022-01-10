@@ -1,3 +1,4 @@
+import torchvision.models
 from PIL import Image
 from torch.autograd import Variable
 import argparse
@@ -37,14 +38,16 @@ class Predict():
         return index
 
 
-if __name__ == '__main__':
+# if __name__ == '__main__':
+#
+#     #model_path_mobile_net = "/Users/prathameshsardeshmukh/PycharmProjects/Motor_AI_Test/Models_Visualisation/my_MobileNetV3.pth"
+#     parser = argparse.ArgumentParser(description='Predict on Single Image')
+#     parser.add_argument("--model_path", type=str, help='Path for image')
+#     parser.add_argument("--img_path", type=str,help='Path for image')
+#
+#     args = parser.parse_args()
+#     P = Predict(args.model_path)
+#     output = P.predict_img(args.img_path)
+#     print("Predicted Class ==>",output)
 
-    #model_path_mobile_net = "/Users/prathameshsardeshmukh/PycharmProjects/Motor_AI_Test/Models/my_MobileNetV3.pth"
-    parser = argparse.ArgumentParser(description='Predict on Single Image')
-    parser.add_argument("--model_path", type=str, help='Path for image')
-    parser.add_argument("--img_path", type=str,help='Path for image')
-
-    args = parser.parse_args()
-    P = Predict(args.model_path)
-    output = P.predict_img(args.img_path)
-    print("Predicted Class ==>",output)
+print(torchvision.models.resnet18(pretrained=True))

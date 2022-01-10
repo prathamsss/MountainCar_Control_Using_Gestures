@@ -73,9 +73,9 @@ class MountainCarControl(object):
 
 
 if __name__ == '__main__':
-    # model_path = "/Users/prathameshsardeshmukh/PycharmProjects/Motor_AI_Test/Models/my_res18_best_ever.pth"
+    # model_path = "/Users/prathameshsardeshmukh/PycharmProjects/Motor_AI_Test/Models_Visualisation/my_res18_best_ever.pth"
     parser = argparse.ArgumentParser(description='Hi...')
-    parser.add_argument("model_path", type=str, default='/Models/my_res18_best_ever.pth',
+    parser.add_argument("model_path", type=str, default='/Models_Visualisation/my_res18_best_ever.pth',
                         help='path to Model weights')
 
     args = parser.parse_args()

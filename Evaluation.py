@@ -7,6 +7,7 @@ from torch import nn
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 from  matplotlib import  pyplot as plt
 import argparse
+from sklearn import metrics
 
 class AverageMeter(object):
     """Computes and stores the average and current value"""
@@ -89,6 +90,7 @@ def test_or_validate(data_loader, model_path, loss_func, verbose_display_iter):
 
     confu_mat = confusion_matrix(y_true_list,y_pred_list)
     print(confu_mat)
+    print(metrics.classification_report(y_true_list, y_pred_list, target_names=classes))
 
     display_confusion_mat = ConfusionMatrixDisplay(confusion_matrix=confu_mat,
                             display_labels = classes)
@@ -106,13 +108,13 @@ def main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Model Evaluation Code')
 
-    parser.add_argument("--model_path", type = str,  default='Models/my_res18_best_ever.pth',
+    parser.add_argument("--model_path", type = str,  default='Models_Visualisation/my_res18_best_ever.pth',
                         help ='path to Model weights')
 
     parser.add_argument("--dataset_path", type=str, default='New_dataset/real_time_test',
                         help='path to dataset for evaluation')
 
-    # model_path_resnet = "/Users/prathameshsardeshmukh/PycharmProjects/Motor_AI_Test/Models/my_res18_best_ever.pth"
-    # model_path_mobile_net = "/Users/prathameshsardeshmukh/PycharmProjects/Motor_AI_Test/Models/my_MobileNetV3.pth"
+    # model_path_resnet = "/Users/prathameshsardeshmukh/PycharmProjects/Motor_AI_Test/Models_Visualisation/my_res18_best_ever.pth"
+    # model_path_mobile_net = "/Users/prathameshsardeshmukh/PycharmProjects/Motor_AI_Test/Models_Visualisation/my_MobileNetV3.pth"
     args = parser.parse_args()
     main(args)
